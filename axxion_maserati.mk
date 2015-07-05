@@ -2,12 +2,14 @@
 $(call inherit-product, device/motorola/maserati/full_maserati.mk)
 
 # Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+$(call inherit-product, vendor/axxion/config/common.mk)
+
+TARGET_BOOTANIMATION_SIZE := 540
 
 #
 # Setup device specific product configuration.
 #
-PRODUCT_NAME := cm_maserati
+PRODUCT_NAME := axxion_maserati
 PRODUCT_BRAND := verizon
 PRODUCT_DEVICE := maserati
 PRODUCT_DEVICE_PREFIX := cdma
@@ -19,7 +21,7 @@ PRODUCT_SFX := vzw
 UTC_DATE := $(shell date +%s)
 DATE := $(shell date +%Y%m%d)
 
-PRODUCT_BUILD_PROP_OVERRIDES += \
+ += \
    PRODUCT_NAME=${PRODUCT_DEVICE}_${PRODUCT_SFX} \
    BUILD_NUMBER=${DATE} \
    TARGET_DEVICE=${PRODUCT_DEVICE_PREFIX}_${PRODUCT_DEVICE} \
